@@ -1,3 +1,5 @@
+// Variables 
+
 // body overlay
 const menuOverlay = document.querySelector('#menuOverlay');
 
@@ -13,6 +15,7 @@ const searchBtn = document.querySelector('#searchBtn');
 // close buttons
 const closeMenu = document.querySelector('#closeMenu');
 const closeSearch = document.querySelector('#closeSearch');
+const closeContact = document.querySelector('#closeContact');
 
 
 // Nav Panel links
@@ -108,7 +111,6 @@ const handleOpenMenu = () => {
     searchOpen = false;
     }
 }
-
 // Close Nav Menu
 const handleCloseMenu = () => {
     if (navOpen) {
@@ -171,6 +173,7 @@ const handleCloseMenu = () => {
     }
 }
 
+
 // Open Search  
 const handleOpenSearch = () => {
     if (!searchOpen) {
@@ -209,22 +212,21 @@ const handleOpenSearch = () => {
         setTimeout(() => {
             sNav3.style.opacity = "1";
             sNav3.style.transform = "translate3d(0px, 0, 0)";
-            sNav3.style.transition = "transform 950ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
             sD3.style.opacity = "1";
             sD3.style.transform = "translate3d(0px, 0, 0)";
-            sD3.style.transition = "transform 950ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sD3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
         }, 950);
         setTimeout(() => {
             sNav4.style.opacity = "1";
             sNav4.style.transform = "translate3d(0px, 0, 0)";
-            sNav4.style.transition = "transform 950ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav4.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
         }, 1100);
         
     searchOpen = true;
     navOpen = false;
     }
 }
-
 // Close Search  
 const handleCloseSearch = () => {
     if (searchOpen) {
@@ -279,6 +281,27 @@ const handleCloseSearch = () => {
     }
 }
 
+
+// Open Contact  
+const handleContactOpen = () => {
+    contactPanel.style.display = "block";
+    setTimeout(() => {
+        contactPanel.style.opacity = "1";
+        contactPanel.style.transition = "opacity 450ms ease";
+    }, 1);
+}
+// Close Contact  
+const handleContactClose = () => {
+    contactPanel.style.opacity = "0";
+    contactPanel.style.transition = "opacity 650ms ease";
+    setTimeout(() => {
+        contactPanel.style.display = "none";
+    }, 700);
+
+    handleCloseMenu();
+}
+
+
 // Nav
 navBtn.addEventListener("click", handleOpenMenu);
 closeMenu.addEventListener("click", handleCloseMenu);
@@ -287,8 +310,14 @@ closeMenu.addEventListener("click", handleCloseMenu);
 searchBtn.addEventListener("click", handleOpenSearch);
 closeSearch.addEventListener("click", handleCloseSearch);
 
-// Overlay close
+// Open Contact
+mNav4.addEventListener("click", handleContactOpen);
+closeContact.addEventListener("click", handleContactClose);
+
+
+
 menuOverlay.onclick = () => {
     handleCloseMenu();
     handleCloseSearch();
+    handleContactClose();
 };
