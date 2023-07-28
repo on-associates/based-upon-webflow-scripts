@@ -1,4 +1,3 @@
-// Variables 
 
 // body overlay
 const menuOverlay = document.querySelector('#menuOverlay');
@@ -50,7 +49,6 @@ let navOpen = false;
 let searchOpen = false;
 let contactOpen = false;
 
-
 // Open Nav Menu 
 const handleOpenMenu = () => {
     if (!navOpen) {
@@ -60,7 +58,7 @@ const handleOpenMenu = () => {
             menuOverlay.style.transform = "translate3d(0, 0vh, 0)";
             menuOverlay.style.transition = "opacity 500ms ease";
             navPanel.style.transform = "translate3d(0%, 0%, 0)";
-            navPanel.style.transition = "transform 1000ms cubic-bezier(0.25, 1, 0.5, 1)";
+            navPanel.style.transition = "transform 1s cubic-bezier(0.25, 1, 0.5, 1)";
         }, 1);
         // first nav
         setTimeout(() => {
@@ -100,6 +98,11 @@ const handleOpenMenu = () => {
             mD2.style.opacity = "1";
             mD2.style.transform = "translate3d(0px, 0, 0)";
             mD2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+
+            // close button
+            closeMenu.style.opacity = "1";
+            closeMenu.style.pointerEvents = "all";
+            closeMenu.style.transition = "opacity 500ms ease";
         }, 1250);
         setTimeout(() => {
             mNavS3.style.opacity = "1";
@@ -115,64 +118,51 @@ const handleOpenMenu = () => {
 const handleCloseMenu = () => {
     if (navOpen) {
         menuOverlay.style.opacity = "0";
-        menuOverlay.style.transform = "translate3d(0, 50vh, 0)";
-        menuOverlay.style.transition = "opacity 500ms ease, transform 1s cubic-bezier(0.76, 0, 0.24, 1)";
+        menuOverlay.style.transition = "opacity 400ms ease";
 
         navPanel.style.transform = "translate3d(100%, 0%, 0)";
-        navPanel.style.transition = "opacity 500ms ease, transform 1s cubic-bezier(0.76, 0, 0.24, 1)";
-        setTimeout(() => {
-            menuOverlay.style.display = "none";
-        }, 600);
+        navPanel.style.transition = "transform 800ms cubic-bezier(0.76, 0, 0.24, 1)";
 
-        // first nav
         setTimeout(() => {
+            // close button
+            closeMenu.style.opacity = "0";
+            closeMenu.style.pointerEvents = "none";
+            closeMenu.style.transition = "opacity 200ms ease";
+            // rest nav links to default values
             mNav1.style.opacity = "0";
             mNav1.style.transform = "translate3d(50px, 0, 0)";
-            mNav1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 500);
-        setTimeout(() => {
+            mNav1.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             mNav2.style.opacity = "0";
             mNav2.style.transform = "translate3d(50px, 0, 0)";
-            mNav2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 650);
-        setTimeout(() => {
+            mNav2.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             mNav3.style.opacity = "0";
             mNav3.style.transform = "translate3d(50px, 0, 0)";
-            mNav3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 800);
-        setTimeout(() => {
+            mNav3.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             mNav4.style.opacity = "0";
             mNav4.style.transform = "translate3d(50px, 0, 0)";
-            mNav4.style.transition = "transform 950ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 950);
-
-        // second nav
-        setTimeout(() => {
+            mNav4.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             mNavS1.style.opacity = "0";
             mNavS1.style.transform = "translate3d(50px, 0, 0)";
-            mNavS1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNavS1.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             mD1.style.opacity = "0";
             mD1.style.transform = "translate3d(50px, 0, 0)";
-            mD1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 1100);
-        setTimeout(() => {
+            mD1.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             mNavS2.style.opacity = "0";
             mNavS2.style.transform = "translate3d(50px, 0, 0)";
-            mNavS2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNavS2.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             mD2.style.opacity = "0";
             mD2.style.transform = "translate3d(50px, 0, 0)";
-            mD2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 1250);
-        setTimeout(() => {
+            mD2.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             mNavS3.style.opacity = "0";
             mNavS3.style.transform = "translate3d(50px, 0, 0)";
-            mNavS3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 1400);
-
+            mNavS3.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
+        }, 300);
+        setTimeout(() => {
+            menuOverlay.style.display = "none";
+        }, 400);
     navOpen = false;
     }
 }
-
 
 // Open Search  
 const handleOpenSearch = () => {
@@ -216,6 +206,12 @@ const handleOpenSearch = () => {
             sD3.style.opacity = "1";
             sD3.style.transform = "translate3d(0px, 0, 0)";
             sD3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+
+
+            // close button
+            closeSearch.style.opacity = "1";
+            closeSearch.style.pointerEvents = "all";
+            closeSearch.style.transition = "opacity 500ms ease";
         }, 950);
         setTimeout(() => {
             sNav4.style.opacity = "1";
@@ -231,56 +227,49 @@ const handleOpenSearch = () => {
 const handleCloseSearch = () => {
     if (searchOpen) {
         menuOverlay.style.opacity = "0";
-        menuOverlay.style.transform = "translate3d(0, 50vh, 0)";
-        menuOverlay.style.transition = "opacity 500ms ease, transform 1s cubic-bezier(0.76, 0, 0.24, 1)";
+        menuOverlay.style.transition = "opacity 400ms ease";
 
         searchPanel.style.transform = "translate3d(100%, 0%, 0)";
         searchPanel.style.transition = "transform 800ms cubic-bezier(0.76, 0, 0.24, 1)";
-        setTimeout(() => {
-            menuOverlay.style.display = "none";
-        }, 600);
 
-        // first nav
         setTimeout(() => {
             searchInputField.style.opacity = "0";
             searchInputField.style.transform = "translate3d(50px, 0, 0)";
-            searchInputField.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 500);
+            searchInputField.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
 
-        // second nav  -- ODAVDE 
-        setTimeout(() => {
+            // close button
+            closeSearch.style.opacity = "0";
+            closeSearch.style.pointerEvents = "all";
+            closeSearch.style.transition = "opacity 200ms ease";
+
             sNav1.style.opacity = "0";
             sNav1.style.transform = "translate3d(50px, 0, 0)";
-            sNav1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav1.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             sD1.style.opacity = "0";
             sD1.style.transform = "translate3d(50px, 0, 0)";
-            sD1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 650);
-        setTimeout(() => {
+            sD1.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             sNav2.style.opacity = "0";
             sNav2.style.transform = "translate3d(50px, 0, 0)";
-            sNav2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav2.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             sD2.style.opacity = "0";
             sD2.style.transform = "translate3d(50px, 0, 0)";
-            sD2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 800);
-        setTimeout(() => {
+            sD2.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             sNav3.style.opacity = "0";
             sNav3.style.transform = "translate3d(50px, 0, 0)";
-            sNav3.style.transition = "transform 950ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav3.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             sD3.style.opacity = "0";
             sD3.style.transform = "translate3d(50px, 0, 0)";
-            sD3.style.transition = "transform 950ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 950);
-        setTimeout(() => {
+            sD3.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
             sNav4.style.opacity = "0";
             sNav4.style.transform = "translate3d(50px, 0, 0)";
-            sNav4.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
-        }, 1100);
+            sNav4.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
+        }, 300);
+        setTimeout(() => {
+            menuOverlay.style.display = "none";
+        }, 400);
     searchOpen = false;
     }
 }
-
 
 // Open Contact  
 const handleContactOpen = () => {
@@ -293,14 +282,13 @@ const handleContactOpen = () => {
 // Close Contact  
 const handleContactClose = () => {
     contactPanel.style.opacity = "0";
-    contactPanel.style.transition = "opacity 650ms ease";
+    contactPanel.style.transition = "opacity 200ms ease";
     setTimeout(() => {
         contactPanel.style.display = "none";
-    }, 700);
+    }, 200);
 
     handleCloseMenu();
 }
-
 
 // Nav
 navBtn.addEventListener("click", handleOpenMenu);
@@ -313,8 +301,6 @@ closeSearch.addEventListener("click", handleCloseSearch);
 // Open Contact
 mNav4.addEventListener("click", handleContactOpen);
 closeContact.addEventListener("click", handleContactClose);
-
-
 
 menuOverlay.onclick = () => {
     handleCloseMenu();
