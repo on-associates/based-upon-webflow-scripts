@@ -1,4 +1,3 @@
-
 // body overlay
 const menuOverlay = document.querySelector('#menuOverlay');
 
@@ -108,6 +107,9 @@ const handleOpenMenu = () => {
             mNavS3.style.opacity = "1";
             mNavS3.style.transform = "translate3d(0px, 0, 0)";
             mNavS3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+
+            // menuOverlay
+            menuOverlay.style.pointerEvents = "all"
         }, 1400);
         
     navOpen = true;
@@ -119,6 +121,7 @@ const handleCloseMenu = () => {
     if (navOpen) {
         menuOverlay.style.opacity = "0";
         menuOverlay.style.transition = "opacity 400ms ease";
+        menuOverlay.style.pointerEvents = "none"
 
         navPanel.style.transform = "translate3d(100%, 0%, 0)";
         navPanel.style.transition = "transform 800ms cubic-bezier(0.76, 0, 0.24, 1)";
@@ -217,6 +220,9 @@ const handleOpenSearch = () => {
             sNav4.style.opacity = "1";
             sNav4.style.transform = "translate3d(0px, 0, 0)";
             sNav4.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+
+            // menuOverlay
+            menuOverlay.style.pointerEvents = "all"
         }, 1100);
         
     searchOpen = true;
@@ -228,6 +234,7 @@ const handleCloseSearch = () => {
     if (searchOpen) {
         menuOverlay.style.opacity = "0";
         menuOverlay.style.transition = "opacity 400ms ease";
+        menuOverlay.style.pointerEvents = "none"
 
         searchPanel.style.transform = "translate3d(100%, 0%, 0)";
         searchPanel.style.transition = "transform 800ms cubic-bezier(0.76, 0, 0.24, 1)";
@@ -274,6 +281,7 @@ const handleCloseSearch = () => {
 // Open Contact  
 const handleContactOpen = () => {
     contactPanel.style.display = "block";
+
     setTimeout(() => {
         contactPanel.style.opacity = "1";
         contactPanel.style.transition = "opacity 450ms ease";
@@ -282,12 +290,13 @@ const handleContactOpen = () => {
 // Close Contact  
 const handleContactClose = () => {
     contactPanel.style.opacity = "0";
-    contactPanel.style.transition = "opacity 200ms ease";
+    contactPanel.style.transition = "opacity 400ms ease";
+
     setTimeout(() => {
         contactPanel.style.display = "none";
-    }, 200);
+    }, 400);
 
-    handleCloseMenu();
+    // handleCloseMenu();
 }
 
 // Nav
