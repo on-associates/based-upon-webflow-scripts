@@ -16,14 +16,14 @@ const closeSearch = document.querySelector('#closeSearch');
 const closeContact = document.querySelector('#closeContact');
 
 
-// Nav Panel links
-// first nav
+// Navigation Panel links
+// first nav links
 const mNav1 = document.querySelector('#mNav1');
 const mNav2 = document.querySelector('#mNav2');
 const mNav3 = document.querySelector('#mNav3');
 const mNav4 = document.querySelector('#mNav4');
 
-// second nav
+// second nav links
 const mNavS1 = document.querySelector('#mNavS1');  // link text
 const mD1 = document.querySelector('#mD1');  // devider line
 const mNavS2 = document.querySelector('#mNavS2');  // link text
@@ -31,10 +31,10 @@ const mD2 = document.querySelector('#mD2');  // devider line
 const mNavS3 = document.querySelector('#mNavS3');  // link text
 
 // Search Panel links
-// first nav
+// first nav links
 const searchInputField = document.querySelector('#searchInputField');
 
-// second nav
+// second nav links
 const sNav1 = document.querySelector('#sNav1');  // link text
 const sD1 = document.querySelector('#sD1');  // devider line
 const sNav2 = document.querySelector('#sNav2');  // link text
@@ -48,10 +48,11 @@ let navOpen = false;
 let searchOpen = false;
 let contactOpen = false;
 
-// Open Nav Menu 
+// Open Navigation 
 const handleOpenMenu = () => {
     if (!navOpen) {
         menuOverlay.style.display = "block";
+        document.body.style.overflow = 'hidden';
         setTimeout(() => {
             menuOverlay.style.opacity = "1";
             menuOverlay.style.transform = "translate3d(0, 0vh, 0)";
@@ -116,7 +117,7 @@ const handleOpenMenu = () => {
     searchOpen = false;
     }
 }
-// Close Nav Menu
+// Close Navigation 
 const handleCloseMenu = () => {
     if (navOpen) {
         menuOverlay.style.opacity = "0";
@@ -125,6 +126,7 @@ const handleCloseMenu = () => {
 
         navPanel.style.transform = "translate3d(100%, 0%, 0)";
         navPanel.style.transition = "transform 800ms cubic-bezier(0.76, 0, 0.24, 1)";
+        document.body.style.overflow = 'auto';
 
         setTimeout(() => {
             // close button
@@ -171,6 +173,8 @@ const handleCloseMenu = () => {
 const handleOpenSearch = () => {
     if (!searchOpen) {
         menuOverlay.style.display = "block";
+        document.body.style.overflow = 'hidden';
+
         setTimeout(() => {
             menuOverlay.style.opacity = "1";
             menuOverlay.style.transform = "translate3d(0, 0vh, 0)";
@@ -238,6 +242,8 @@ const handleCloseSearch = () => {
 
         searchPanel.style.transform = "translate3d(100%, 0%, 0)";
         searchPanel.style.transition = "transform 800ms cubic-bezier(0.76, 0, 0.24, 1)";
+        document.body.style.overflow = 'auto';
+
 
         setTimeout(() => {
             searchInputField.style.opacity = "0";
@@ -299,18 +305,19 @@ const handleContactClose = () => {
     // handleCloseMenu();
 }
 
-// Nav
+// Nav panel
 navBtn.addEventListener("click", handleOpenMenu);
 closeMenu.addEventListener("click", handleCloseMenu);
 
-// Search
+// Search panel
 searchBtn.addEventListener("click", handleOpenSearch);
 closeSearch.addEventListener("click", handleCloseSearch);
 
-// Open Contact
+// Contact panel
 mNav4.addEventListener("click", handleContactOpen);
 closeContact.addEventListener("click", handleContactClose);
 
+// body overlay
 menuOverlay.onclick = () => {
     handleCloseMenu();
     handleCloseSearch();
