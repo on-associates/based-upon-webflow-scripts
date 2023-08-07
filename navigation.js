@@ -1,3 +1,6 @@
+// contact button
+const contactBtn = document.querySelector('#contactButton');
+
 // body overlay
 const menuOverlay = document.querySelector('#menuOverlay');
 
@@ -323,3 +326,6 @@ menuOverlay.onclick = () => {
     handleCloseSearch();
     handleContactClose();
 };
+
+// cta module open contact form
+contactBtn.addEventListener("click", handleContactOpen);
