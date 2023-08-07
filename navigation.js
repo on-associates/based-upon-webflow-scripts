@@ -328,4 +328,9 @@ menuOverlay.onclick = () => {
 };
 
 // cta module open contact form
-contactBtn.addEventListener("click", handleContactOpen);
+contactBtn.onclick = () => {
+    handleOpenMenu();
+    setTimeout(() => {
+        handleContactOpen();
+    }, 50);
+}
