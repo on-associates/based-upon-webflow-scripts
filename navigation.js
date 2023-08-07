@@ -327,10 +327,10 @@ menuOverlay.onclick = () => {
     handleContactClose();
 };
 
-// cta module open contact form
+// CTA module open contact form
 contactBtn.onclick = () => {
     handleOpenMenu();
     setTimeout(() => {
         handleContactOpen();
-    }, 50);
+    }, 400);
 }
