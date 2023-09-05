@@ -67,40 +67,40 @@ const handleOpenMenu = () => {
         setTimeout(() => {
             mNav1.style.opacity = "1";
             mNav1.style.transform = "translate3d(0px, 0, 0)";
-            mNav1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNav1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 500);
         setTimeout(() => {
             mNav2.style.opacity = "1";
             mNav2.style.transform = "translate3d(0px, 0, 0)";
-            mNav2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNav2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 650);
         setTimeout(() => {
             mNav3.style.opacity = "1";
             mNav3.style.transform = "translate3d(0px, 0, 0)";
-            mNav3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNav3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 800);
         setTimeout(() => {
             mNav4.style.opacity = "1";
             mNav4.style.transform = "translate3d(0px, 0, 0)";
-            mNav4.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNav4.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 950);
 
         // second nav
         setTimeout(() => {
             mNavS1.style.opacity = "1";
             mNavS1.style.transform = "translate3d(0px, 0, 0)";
-            mNavS1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNavS1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
             mD1.style.opacity = "1";
             mD1.style.transform = "translate3d(0px, 0, 0)";
-            mD1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mD1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 1100);
         setTimeout(() => {
             mNavS2.style.opacity = "1";
             mNavS2.style.transform = "translate3d(0px, 0, 0)";
-            mNavS2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNavS2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
             mD2.style.opacity = "1";
             mD2.style.transform = "translate3d(0px, 0, 0)";
-            mD2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mD2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
 
             // close button
             closeMenu.style.opacity = "1";
@@ -110,7 +110,7 @@ const handleOpenMenu = () => {
         setTimeout(() => {
             mNavS3.style.opacity = "1";
             mNavS3.style.transform = "translate3d(0px, 0, 0)";
-            mNavS3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            mNavS3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
 
             // menuOverlay
             menuOverlay.style.pointerEvents = "all"
@@ -189,33 +189,33 @@ const handleOpenSearch = () => {
         setTimeout(() => {
             searchInputField.style.opacity = "1";
             searchInputField.style.transform = "translate3d(0px, 0, 0)";
-            searchInputField.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            searchInputField.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 500);
 
         // second nav
         setTimeout(() => {
             sNav1.style.opacity = "1";
             sNav1.style.transform = "translate3d(0px, 0, 0)";
-            sNav1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
             sD1.style.opacity = "1";
             sD1.style.transform = "translate3d(0px, 0, 0)";
-            sD1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sD1.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 650);
         setTimeout(() => {
             sNav2.style.opacity = "1";
             sNav2.style.transform = "translate3d(0px, 0, 0)";
-            sNav2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
             sD2.style.opacity = "1";
             sD2.style.transform = "translate3d(0px, 0, 0)";
-            sD2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sD2.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 800);
         setTimeout(() => {
             sNav3.style.opacity = "1";
             sNav3.style.transform = "translate3d(0px, 0, 0)";
-            sNav3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
             sD3.style.opacity = "1";
             sD3.style.transform = "translate3d(0px, 0, 0)";
-            sD3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sD3.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
 
 
             // close button
@@ -226,7 +226,7 @@ const handleOpenSearch = () => {
         setTimeout(() => {
             sNav4.style.opacity = "1";
             sNav4.style.transform = "translate3d(0px, 0, 0)";
-            sNav4.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease";
+            sNav4.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
 
             // menuOverlay
             menuOverlay.style.pointerEvents = "all"
