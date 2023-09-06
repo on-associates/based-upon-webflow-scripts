@@ -20,24 +20,26 @@ const closeContact = document.querySelector('#closeContact');
 
 
 // Navigation Panel links
-// first nav links
+// top links
 const mNav1 = document.querySelector('#mNav1');
 const mNav2 = document.querySelector('#mNav2');
 const mNav3 = document.querySelector('#mNav3');
 const mNav4 = document.querySelector('#mNav4');
 
-// second nav links
+// bottom links
 const mNavS1 = document.querySelector('#mNavS1');  // link text
 const mD1 = document.querySelector('#mD1');  // devider line
 const mNavS2 = document.querySelector('#mNavS2');  // link text
 const mD2 = document.querySelector('#mD2');  // devider line
 const mNavS3 = document.querySelector('#mNavS3');  // link text
 
-// Search Panel links
-// first nav links
+
+
+// Search Panel Links
+// search field
 const searchInputField = document.querySelector('#searchInputField');
 
-// second nav links
+// bottom links
 const sNav1 = document.querySelector('#sNav1');  // link text
 const sD1 = document.querySelector('#sD1');  // devider line
 const sNav2 = document.querySelector('#sNav2');  // link text
@@ -51,7 +53,7 @@ let navOpen = false;
 let searchOpen = false;
 let contactOpen = false;
 
-// Open Navigation 
+// open navigation 
 const handleOpenMenu = () => {
     if (!navOpen) {
         menuOverlay.style.display = "block";
@@ -63,7 +65,7 @@ const handleOpenMenu = () => {
             navPanel.style.transform = "translate3d(0%, 0%, 0)";
             navPanel.style.transition = "transform 1s cubic-bezier(0.25, 1, 0.5, 1)";
         }, 1);
-        // first nav
+        // top links
         setTimeout(() => {
             mNav1.style.opacity = "1";
             mNav1.style.transform = "translate3d(0px, 0, 0)";
@@ -85,7 +87,7 @@ const handleOpenMenu = () => {
             mNav4.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 950);
 
-        // second nav
+        // bottom links
         setTimeout(() => {
             mNavS1.style.opacity = "1";
             mNavS1.style.transform = "translate3d(0px, 0, 0)";
@@ -120,7 +122,7 @@ const handleOpenMenu = () => {
     searchOpen = false;
     }
 }
-// Close Navigation 
+// close navigation 
 const handleCloseMenu = () => {
     if (navOpen) {
         menuOverlay.style.opacity = "0";
@@ -136,7 +138,7 @@ const handleCloseMenu = () => {
             closeMenu.style.opacity = "0";
             closeMenu.style.pointerEvents = "none";
             closeMenu.style.transition = "opacity 200ms ease";
-            // rest nav links to default values
+            // reset nav links to default values
             mNav1.style.opacity = "0";
             mNav1.style.transform = "translate3d(50px, 0, 0)";
             mNav1.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
@@ -172,7 +174,7 @@ const handleCloseMenu = () => {
     }
 }
 
-// Open Search  
+// open search  
 const handleOpenSearch = () => {
     if (!searchOpen) {
         menuOverlay.style.display = "block";
@@ -185,14 +187,14 @@ const handleOpenSearch = () => {
             searchPanel.style.transform = "translate3d(0%, 0%, 0)";
             searchPanel.style.transition = "transform 1000ms cubic-bezier(0.25, 1, 0.5, 1)";
         }, 1);
-        // first nav
+        // search field
         setTimeout(() => {
             searchInputField.style.opacity = "1";
             searchInputField.style.transform = "translate3d(0px, 0, 0)";
             searchInputField.style.transition = "transform 1250ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease, color 350ms ease";
         }, 500);
 
-        // second nav
+        // bottom links
         setTimeout(() => {
             sNav1.style.opacity = "1";
             sNav1.style.transform = "translate3d(0px, 0, 0)";
@@ -236,7 +238,7 @@ const handleOpenSearch = () => {
     navOpen = false;
     }
 }
-// Close Search  
+// close search  
 const handleCloseSearch = () => {
     if (searchOpen) {
         menuOverlay.style.opacity = "0";
@@ -257,7 +259,7 @@ const handleCloseSearch = () => {
             closeSearch.style.opacity = "0";
             closeSearch.style.pointerEvents = "all";
             closeSearch.style.transition = "opacity 200ms ease";
-
+            // reset links to default values
             sNav1.style.opacity = "0";
             sNav1.style.transform = "translate3d(50px, 0, 0)";
             sNav1.style.transition = "transform 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms ease";
@@ -287,7 +289,7 @@ const handleCloseSearch = () => {
     }
 }
 
-// Open Contact  
+// open contact panel
 const handleContactOpen = () => {
     contactPanel.style.display = "block";
 
@@ -296,7 +298,8 @@ const handleContactOpen = () => {
         contactPanel.style.transition = "opacity 450ms ease";
     }, 1);
 }
-// Close Contact  
+
+// close contact panel
 const handleContactClose = () => {
     contactPanel.style.opacity = "0";
     contactPanel.style.transition = "opacity 400ms ease";
@@ -304,33 +307,62 @@ const handleContactClose = () => {
     setTimeout(() => {
         contactPanel.style.display = "none";
     }, 400);
-
-    // handleCloseMenu();
 }
 
-// Nav panel
+
+// navigation panel
 navBtn.addEventListener("click", handleOpenMenu);
 closeMenu.addEventListener("click", handleCloseMenu);
 
-// Search panel
+// search panel
 searchBtn.addEventListener("click", handleOpenSearch);
 closeSearch.addEventListener("click", handleCloseSearch);
 
-// Contact panel
+// contact panel
 mNav4.addEventListener("click", handleContactOpen);
 closeContact.addEventListener("click", handleContactClose);
 
-// body overlay
+// on click body overlay close all panels
 menuOverlay.onclick = () => {
     handleCloseMenu();
     handleCloseSearch();
     handleContactClose();
 };
 
-// CTA module open contact form
-contactBtn.onclick = () => {
-    handleOpenMenu();
+// open CTA module contact panel
+const contactButtonsOpen = () => {
+    handleContactOpen();
+    menuOverlay.style.display = "block";
+    document.body.style.overflow = 'hidden';
     setTimeout(() => {
-        handleContactOpen();
+        menuOverlay.style.opacity = "1";
+        menuOverlay.style.transform = "translate3d(0, 0vh, 0)";
+        menuOverlay.style.transition = "opacity 500ms ease";
+        menuOverlay.style.pointerEvents = "all"
+    }, 100);
+};
+
+// close CTA module contact panel
+const closeCTAModuleContact = () => {
+    handleCloseMenu();
+    handleCloseSearch();
+    handleContactClose();
+    menuOverlay.style.opacity = "0";
+    menuOverlay.style.transition = "opacity 400ms ease";
+    menuOverlay.style.pointerEvents = "none"
+    setTimeout(() => {
+        menuOverlay.style.display = "none";
     }, 400);
-}
+    document.body.style.overflow = 'auto';
+};
+closeContact.addEventListener("click", closeCTAModuleContact);
+
+// check if the element is on the page
+document.addEventListener("DOMContentLoaded", function() {
+    if (contactBtn) {
+        contactBtn.addEventListener("click", contactButtonsOpen);
+    }
+});
+
+// on click body overlay close CTA module contact panel
+menuOverlay.onclick = closeCTAModuleContact;
